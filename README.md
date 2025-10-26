@@ -11,7 +11,10 @@ also represented as `^[` or `\e` is used to start a control sequence.
 $ ls --color | cat -v
 ```
 
+## Moving the cursor
+
 ```c
+int n = ...
 printf("\x1b[%uA", n); // Move the cursor n cells up
 printf("\x1b[%uB", n); // Move the cursor n cells down
 printf("\x1b[%uC", n); // Move the cursor n cells forward
@@ -21,6 +24,7 @@ printf("\x1b[%u;%uH", row, col); // Move the cursor to row, col
 ```
 
 ## Function and Extended key escape sequences
+
 | Key    | Sequence    | Bytes (hex)    |
 | ------ | ----------- | -------------- |
 | F1     | ESC O P     | 1B 4F 50       |
