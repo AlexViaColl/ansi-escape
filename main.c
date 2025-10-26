@@ -25,6 +25,7 @@ static bool get_terminal_size(int *rows, int *cols)
 
 static void handle_winch(int sig)
 {
+    (void)sig;
     printf("\x1b[2J"); // Clear entire screen
     printf("\x1b[H");  // Move cursor to top-left
     get_terminal_size(&rows, &cols);
@@ -32,6 +33,7 @@ static void handle_winch(int sig)
 
 static void handle_int(int sig)
 {
+    (void)sig;
     printf("\x1b[0m");   // Restore Select Graphic Rendition (SGR) attributes
     printf("\x1b[2J");   // Clear entire screen
     printf("\x1b[H");    // Move cursor to top-left
